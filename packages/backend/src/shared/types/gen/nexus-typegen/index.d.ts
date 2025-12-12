@@ -97,6 +97,7 @@ export interface NexusGenFieldTypes {
     placeholder: string | null; // String
   }
   Query: { // field return type
+    film: NexusGenRootTypes['Film'] | null; // Film
     helloWorld: NexusGenRootTypes['HelloWorld']; // HelloWorld!
     placeholder: string | null; // String
   }
@@ -124,12 +125,18 @@ export interface NexusGenFieldTypeNames {
     placeholder: 'String'
   }
   Query: { // field return type name
+    film: 'Film'
     helloWorld: 'HelloWorld'
     placeholder: 'String'
   }
 }
 
 export interface NexusGenArgTypes {
+  Query: {
+    film: { // args
+      id: string; // ID!
+    }
+  }
 }
 
 export interface NexusGenAbstractTypeMembers {

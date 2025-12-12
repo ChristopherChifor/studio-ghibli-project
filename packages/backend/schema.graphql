@@ -53,6 +53,11 @@ type Mutation {
 }
 
 type Query {
+  """Fetch a Studio Ghibli film by its ID"""
+  film(
+    """The unique identifier of the film"""
+    id: ID!
+  ): Film
   helloWorld: HelloWorld!
   placeholder: String
 }

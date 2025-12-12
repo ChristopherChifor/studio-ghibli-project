@@ -11,6 +11,7 @@
 - `packages/backend/src/services/GhibliApi/GhibliApi.service.ts` - Service for fetching film data from the Studio Ghibli API
 - `packages/backend/src/services/GhibliApi/GhibliApi.service.unit.test.ts` - Unit tests for the GhibliApi service
 - `packages/backend/src/services/GhibliApi/index.ts` - Barrel export for GhibliApi service
+- `packages/backend/src/schemaModules/ghibli/queries.ghibliSchema.ts` - Contains the film query resolver
 
 ### Notes
 
@@ -32,10 +33,10 @@
   - [x] 2.1 Build a service that fetches film data from the Studio Ghibli API (`https://ghibliapi.vercel.app/films/{id}`)
   - [x] 2.2 Handle API errors gracefully and return appropriate error responses
 
-- [ ] 3.0 Backend: Implement Film Query Resolver
+- [x] 3.0 Backend: Implement Film Query Resolver
 
-  - [ ] 3.1 Create a `film(id: ID!)` query resolver that uses the Ghibli API service
-  - [ ] 3.2 Return properly formatted GraphQL errors for failed requests
+  - [x] 3.1 Create a `film(id: ID!)` query resolver that uses the Ghibli API service
+  - [x] 3.2 Return properly formatted GraphQL errors for failed requests
 
 - [ ] 4.0 Frontend: Set Up GraphQL Query & Generate Types
 
