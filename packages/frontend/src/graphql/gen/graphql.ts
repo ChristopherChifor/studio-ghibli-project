@@ -31,6 +31,22 @@ export type Scalars = {
   Date: { input: any; output: any };
 };
 
+export type Film = {
+  __typename?: 'Film';
+  description?: Maybe<Scalars['String']['output']>;
+  director?: Maybe<Scalars['String']['output']>;
+  id: Scalars['String']['output'];
+  image?: Maybe<Scalars['String']['output']>;
+  movieBanner?: Maybe<Scalars['String']['output']>;
+  originalTitle?: Maybe<Scalars['String']['output']>;
+  originalTitleRomanised?: Maybe<Scalars['String']['output']>;
+  producer?: Maybe<Scalars['String']['output']>;
+  releaseDate?: Maybe<Scalars['String']['output']>;
+  rtScore?: Maybe<Scalars['String']['output']>;
+  runningTime?: Maybe<Scalars['String']['output']>;
+  title: Scalars['String']['output'];
+};
+
 export type HelloWorld = {
   __typename?: 'HelloWorld';
   message?: Maybe<Scalars['String']['output']>;
@@ -43,8 +59,13 @@ export type Mutation = {
 
 export type Query = {
   __typename?: 'Query';
+  film?: Maybe<Film>;
   helloWorld: HelloWorld;
   placeholder?: Maybe<Scalars['String']['output']>;
+};
+
+export type QueryFilmArgs = {
+  id: Scalars['ID']['input'];
 };
 
 export type GetHelloWorldQueryVariables = Exact<{ [key: string]: never }>;
@@ -52,6 +73,29 @@ export type GetHelloWorldQueryVariables = Exact<{ [key: string]: never }>;
 export type GetHelloWorldQuery = {
   __typename?: 'Query';
   helloWorld: { __typename?: 'HelloWorld'; message?: string | null };
+};
+
+export type GetFilmQueryVariables = Exact<{
+  id: Scalars['ID']['input'];
+}>;
+
+export type GetFilmQuery = {
+  __typename?: 'Query';
+  film?: {
+    __typename?: 'Film';
+    id: string;
+    title: string;
+    originalTitle?: string | null;
+    originalTitleRomanised?: string | null;
+    image?: string | null;
+    movieBanner?: string | null;
+    description?: string | null;
+    director?: string | null;
+    producer?: string | null;
+    releaseDate?: string | null;
+    runningTime?: string | null;
+    rtScore?: string | null;
+  } | null;
 };
 
 export const GetHelloWorldDocument = {
@@ -79,3 +123,65 @@ export const GetHelloWorldDocument = {
     },
   ],
 } as unknown as DocumentNode<GetHelloWorldQuery, GetHelloWorldQueryVariables>;
+export const GetFilmDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'query',
+      name: { kind: 'Name', value: 'GetFilm' },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'id' } },
+          type: {
+            kind: 'NonNullType',
+            type: { kind: 'NamedType', name: { kind: 'Name', value: 'ID' } },
+          },
+        },
+      ],
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'film' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'id' },
+                value: {
+                  kind: 'Variable',
+                  name: { kind: 'Name', value: 'id' },
+                },
+              },
+            ],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'title' } },
+                {
+                  kind: 'Field',
+                  name: { kind: 'Name', value: 'originalTitle' },
+                },
+                {
+                  kind: 'Field',
+                  name: { kind: 'Name', value: 'originalTitleRomanised' },
+                },
+                { kind: 'Field', name: { kind: 'Name', value: 'image' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'movieBanner' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'description' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'director' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'producer' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'releaseDate' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'runningTime' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'rtScore' } },
+              ],
+            },
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<GetFilmQuery, GetFilmQueryVariables>;

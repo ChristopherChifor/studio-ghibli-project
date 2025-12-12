@@ -19,7 +19,7 @@
 
 ## Tasks
 
-- [ ] 1.0 Backend: Create Film GraphQL Type & Schema
+- [x] 1.0 Backend: Create Film GraphQL Type & Schema
 
   - [x] 1.1 Define the Film object type with all required fields (id, title, image, movieBanner, description, director, releaseDate, runningTime, rtScore, etc.)
   - [x] 1.2 Transform snake_case API fields to camelCase GraphQL fields
