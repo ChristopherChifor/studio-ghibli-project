@@ -12,6 +12,10 @@
 - `packages/backend/src/services/GhibliApi/GhibliApi.service.unit.test.ts` - Unit tests for the GhibliApi service
 - `packages/backend/src/services/GhibliApi/index.ts` - Barrel export for GhibliApi service
 - `packages/backend/src/schemaModules/ghibli/queries.ghibliSchema.ts` - Contains the film query resolver
+- `packages/frontend/src/modules/home/components/MovieCard/MovieCard.tsx` - Main MovieCard component with three states
+- `packages/frontend/src/modules/home/components/MovieCard/MovieCard.styles.ts` - Styled components for MovieCard
+- `packages/frontend/src/modules/home/components/MovieCard/MovieCard.types.ts` - TypeScript interfaces and enums
+- `packages/frontend/src/modules/home/constants.ts` - Film configurations with IDs and colors
 
 ### Notes
 
@@ -46,7 +50,7 @@
 
 - [ ] 5.0 Frontend: Create Movie Card Component with Three States
 
-  - [ ] 5.1 Build the card component supporting resting, loaded, and expanded states
+  - [x] 5.1 Build the card component supporting resting, loaded, and expanded states
   - [ ] 5.2 Implement 3D flip animation for state transitions
   - [ ] 5.3 Implement hover/tap animation for expanded state (image shrinks upward, details revealed)
   - [ ] 5.4 Handle desktop hover and mobile tap interactions
