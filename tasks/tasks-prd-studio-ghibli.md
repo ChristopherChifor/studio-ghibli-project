@@ -8,6 +8,9 @@
 - `packages/backend/schema.graphql` - Auto-generated GraphQL schema (includes Film type)
 - `packages/backend/src/shared/types/gen/nexus-typegen/index.d.ts` - Auto-generated TypeScript types for the schema
 - `packages/backend/src/shared/utils.ts` - Contains transformGhibliFilm function to convert snake_case API response to camelCase
+- `packages/backend/src/services/GhibliApi/GhibliApi.service.ts` - Service for fetching film data from the Studio Ghibli API
+- `packages/backend/src/services/GhibliApi/GhibliApi.service.unit.test.ts` - Unit tests for the GhibliApi service
+- `packages/backend/src/services/GhibliApi/index.ts` - Barrel export for GhibliApi service
 
 ### Notes
 
@@ -24,10 +27,10 @@
   - [x] 1.1 Define the Film object type with all required fields (id, title, image, movieBanner, description, director, releaseDate, runningTime, rtScore, etc.)
   - [x] 1.2 Transform snake_case API fields to camelCase GraphQL fields
 
-- [ ] 2.0 Backend: Create Ghibli API Service
+- [x] 2.0 Backend: Create Ghibli API Service
 
-  - [ ] 2.1 Build a service that fetches film data from the Studio Ghibli API (`https://ghibliapi.vercel.app/films/{id}`)
-  - [ ] 2.2 Handle API errors gracefully and return appropriate error responses
+  - [x] 2.1 Build a service that fetches film data from the Studio Ghibli API (`https://ghibliapi.vercel.app/films/{id}`)
+  - [x] 2.2 Handle API errors gracefully and return appropriate error responses
 
 - [ ] 3.0 Backend: Implement Film Query Resolver
 
