@@ -38,11 +38,11 @@
   - [x] 3.1 Create a `film(id: ID!)` query resolver that uses the Ghibli API service
   - [x] 3.2 Return properly formatted GraphQL errors for failed requests
 
-- [ ] 4.0 Frontend: Set Up GraphQL Query & Generate Types
+- [x] 4.0 Frontend: Set Up GraphQL Query & Generate Types
 
-  - [ ] 4.1 Create the `GET_FILM` GraphQL query
-  - [ ] 4.2 Run codegen to generate TypeScript types and hooks
-  - [ ] 4.3 Configure `useLazyQuery` for on-demand fetching
+  - [x] 4.1 Create the `GET_FILM` GraphQL query
+  - [x] 4.2 Run codegen to generate TypeScript types and hooks
+  - [x] 4.3 Configure `useLazyQuery` for on-demand fetching
 
 - [ ] 5.0 Frontend: Create Movie Card Component with Three States
 

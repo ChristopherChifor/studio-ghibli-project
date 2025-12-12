@@ -31,19 +31,32 @@ export type Scalars = {
   Date: { input: any; output: any };
 };
 
+/** A Studio Ghibli film */
 export type Film = {
   __typename?: 'Film';
+  /** A brief description of the film */
   description?: Maybe<Scalars['String']['output']>;
+  /** The director of the film */
   director?: Maybe<Scalars['String']['output']>;
+  /** Unique identifier for the film */
   id: Scalars['String']['output'];
+  /** URL of the movie poster image */
   image?: Maybe<Scalars['String']['output']>;
+  /** URL of the movie banner image */
   movieBanner?: Maybe<Scalars['String']['output']>;
+  /** The original Japanese title */
   originalTitle?: Maybe<Scalars['String']['output']>;
+  /** The romanised version of the original title */
   originalTitleRomanised?: Maybe<Scalars['String']['output']>;
+  /** The producer of the film */
   producer?: Maybe<Scalars['String']['output']>;
+  /** The release year of the film */
   releaseDate?: Maybe<Scalars['String']['output']>;
+  /** Rotten Tomatoes score */
   rtScore?: Maybe<Scalars['String']['output']>;
+  /** The running time in minutes */
   runningTime?: Maybe<Scalars['String']['output']>;
+  /** The title of the film */
   title: Scalars['String']['output'];
 };
 
@@ -59,6 +72,7 @@ export type Mutation = {
 
 export type Query = {
   __typename?: 'Query';
+  /** Fetch a Studio Ghibli film by its ID */
   film?: Maybe<Film>;
   helloWorld: HelloWorld;
   placeholder?: Maybe<Scalars['String']['output']>;
