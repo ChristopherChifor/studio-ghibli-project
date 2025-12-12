@@ -5,6 +5,45 @@
 """Date custom scalar type"""
 scalar Date
 
+"""A Studio Ghibli film"""
+type Film {
+  """A brief description of the film"""
+  description: String
+
+  """The director of the film"""
+  director: String
+
+  """Unique identifier for the film"""
+  id: String!
+
+  """URL of the movie poster image"""
+  image: String
+
+  """URL of the movie banner image"""
+  movieBanner: String
+
+  """The original Japanese title"""
+  originalTitle: String
+
+  """The romanised version of the original title"""
+  originalTitleRomanised: String
+
+  """The producer of the film"""
+  producer: String
+
+  """The release year of the film"""
+  releaseDate: String
+
+  """Rotten Tomatoes score"""
+  rtScore: String
+
+  """The running time in minutes"""
+  runningTime: String
+
+  """The title of the film"""
+  title: String!
+}
+
 type HelloWorld {
   message: String
 }

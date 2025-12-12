@@ -19,11 +19,11 @@ export const Film = objectType({
     });
     t.string('image', { description: 'URL of the movie poster image' });
     t.string('movieBanner', { description: 'URL of the movie banner image' });
-    t.string('description', { description: 'Description of the film' });
-    t.string('director', { description: 'Director of the film' });
-    t.string('producer', { description: 'Producer of the film' });
-    t.string('releaseDate', { description: 'Release date of the film' });
-    t.string('runningTime', { description: 'Running time in minutes' });
+    t.string('description', { description: 'A brief description of the film' });
+    t.string('director', { description: 'The director of the film' });
+    t.string('producer', { description: 'The producer of the film' });
+    t.string('releaseDate', { description: 'The release year of the film' });
+    t.string('runningTime', { description: 'The running time in minutes' });
     t.string('rtScore', { description: 'Rotten Tomatoes score' });
   },
 });

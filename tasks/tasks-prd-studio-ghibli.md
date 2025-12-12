@@ -4,9 +4,10 @@
 
 ## Relevant Files
 
-- `packages/backend/src/schemaModules/ghibli/objectTypes.ghibliSchema.ts` - Defines the Film GraphQL object type with all required fields
-- `packages/backend/src/schemaModules/ghibli/types.ts` - TypeScript interfaces for API response (snake_case) and Film type (camelCase), plus transformation function
-- `packages/backend/src/schemaModules/ghibli/index.ts` - Exports for ghibli schema module
+- `packages/backend/src/schemaModules/ghibli/objectTypes.ghibliSchema.ts` - Defines the Film GraphQL object type with all fields
+- `packages/backend/schema.graphql` - Auto-generated GraphQL schema (includes Film type)
+- `packages/backend/src/shared/types/gen/nexus-typegen/index.d.ts` - Auto-generated TypeScript types for the schema
+- `packages/backend/src/shared/utils.ts` - Contains transformGhibliFilm function to convert snake_case API response to camelCase
 
 ### Notes
 
