@@ -16,6 +16,8 @@
 - `packages/frontend/src/modules/home/components/MovieCard/MovieCard.styles.ts` - Styled components for MovieCard
 - `packages/frontend/src/modules/home/components/MovieCard/MovieCard.types.ts` - TypeScript interfaces and enums
 - `packages/frontend/src/modules/home/constants.ts` - Film configurations with IDs and colors
+- `packages/frontend/src/contexts/ToastContext.tsx` - Toast notification context and provider
+- `packages/frontend/src/contexts/index.ts` - Barrel export for contexts
 
 ### Notes
 
@@ -48,25 +50,21 @@
   - [x] 4.2 Run codegen to generate TypeScript types and hooks
   - [x] 4.3 Configure `useLazyQuery` for on-demand fetching
 
-- [ ] 5.0 Frontend: Create Movie Card Component with Three States
+- [x] 5.0 Frontend: Create Movie Card Component with Three States
 
   - [x] 5.1 Build the card component supporting resting, loaded, and expanded states
-  - [ ] 5.2 Implement 3D flip animation for state transitions
-  - [ ] 5.3 Implement hover/tap animation for expanded state (image shrinks upward, details revealed)
-  - [ ] 5.4 Handle desktop hover and mobile tap interactions
+  - [x] 5.2 Implement 3D flip animation for state transitions
+  - [x] 5.3 Implement hover/tap animation for expanded state (image shrinks upward, details revealed)
+  - [x] 5.4 Handle desktop hover and mobile tap interactions
 
-- [ ] 6.0 Frontend: Create Responsive Movie Grid Layout
+- [x] 6.0 Frontend: Create Responsive Movie Grid Layout
 
-  - [ ] 6.1 Build the grid container with 1x4 horizontal layout on desktop
-  - [ ] 6.2 Implement single-column stacked layout on mobile (≤768px)
-  - [ ] 6.3 Ensure responsiveness down to 320px viewport width
+  - [x] 6.1 Build the grid container with 1x4 horizontal layout on desktop
+  - [x] 6.2 Implement single-column stacked layout on mobile (≤768px)
+  - [x] 6.3 Ensure responsiveness down to 320px viewport width
 
-- [ ] 7.0 Frontend: Implement Loading States & Error Handling
-  - [ ] 7.1 Add loading skeleton animation during data fetch
-  - [ ] 7.2 Add loading indicator to the "Load" button when clicked
-  - [ ] 7.3 Display error messages inside affected cards
-  - [ ] 7.4 Show toast notifications for errors using MUI Snackbar/Alert
-
----
-
-I have generated the high-level tasks based on the PRD. Ready to generate the sub-tasks? Respond with **"Go"** to proceed.
+- [x] 7.0 Frontend: Implement Loading States & Error Handling
+  - [x] 7.1 Add loading skeleton animation during data fetch
+  - [x] 7.2 Add loading indicator to the "Load" button when clicked
+  - [x] 7.3 Display error messages inside affected cards
+  - [x] 7.4 Show toast notifications for errors using MUI Snackbar/Alert

@@ -3,8 +3,8 @@ import { styled, Box, Typography, IconButton } from '@mui/material';
 // Card container with 3D perspective
 export const CardContainer = styled(Box)({
   perspective: '1000px',
-  width: '100%',
-  height: '360px',
+  width: '290px',
+  height: '368px',
   cursor: 'pointer',
 });
 
@@ -26,9 +26,9 @@ const cardFaceBase = {
   width: '100%',
   height: '100%',
   backfaceVisibility: 'hidden' as const,
-  borderRadius: '20px',
+  borderRadius: '16px',
   overflow: 'hidden',
-  boxShadow: '0 4px 24px rgba(0, 0, 0, 0.25)',
+  boxShadow: '0 4px 24px rgba(0, 0, 0, 0.15)',
   border: '4px solid #fff',
 };
 
@@ -49,7 +49,7 @@ export const CardFront = styled(Box, {
 export const CardBack = styled(Box)({
   ...cardFaceBase,
   transform: 'rotateY(180deg)',
-  backgroundColor: '#1a1a2e',
+  backgroundColor: '#fff',
   display: 'flex',
   flexDirection: 'column',
 });
@@ -88,15 +88,17 @@ export const ArrowButton = styled(IconButton)({
   },
 });
 
-// Loaded state - Image container that shrinks on expand
+// Loaded state - Image container that shrinks on hover/expand
 export const ImageContainer = styled(Box, {
   shouldForwardProp: (prop) => prop !== 'isExpanded',
 })<{ isExpanded: boolean }>(({ isExpanded }) => ({
   width: '100%',
-  height: isExpanded ? '45%' : '100%',
-  transition: 'height 0.35s ease-out',
+  height: isExpanded ? '30%' : '100%',
+  transition: 'height 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
   overflow: 'hidden',
   position: 'relative',
+  flexShrink: 0,
+  willChange: 'height',
 }));
 
 export const MovieImage = styled('img')({
@@ -106,7 +108,9 @@ export const MovieImage = styled('img')({
   objectPosition: 'center top',
 });
 
-export const LoadedTitle = styled(Typography)({
+export const LoadedTitle = styled(Typography, {
+  shouldForwardProp: (prop) => prop !== 'isVisible',
+})<{ isVisible?: boolean }>(({ isVisible = true }) => ({
   position: 'absolute',
   bottom: 0,
   left: 0,
@@ -116,53 +120,76 @@ export const LoadedTitle = styled(Typography)({
   color: '#fff',
   fontSize: '1.25rem',
   fontWeight: 600,
-});
+  opacity: isVisible ? 1 : 0,
+  transition: 'opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+}));
 
 // Expanded state - Details section
 export const DetailsContainer = styled(Box, {
   shouldForwardProp: (prop) => prop !== 'isExpanded',
 })<{ isExpanded: boolean }>(({ isExpanded }) => ({
   padding: '16px',
-  color: '#fff',
+  color: '#333',
   flex: 1,
   overflow: 'auto',
-  opacity: isExpanded ? 1 : 0,
-  transition: 'opacity 0.35s ease-out',
   display: 'flex',
   flexDirection: 'column',
   gap: '8px',
+  opacity: isExpanded ? 1 : 0,
+  transition: 'opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+  transitionDelay: isExpanded ? '0.15s' : '0s',
+  willChange: 'opacity',
 }));
 
 export const Description = styled(Typography)({
   fontSize: '0.85rem',
   lineHeight: 1.5,
-  color: 'rgba(255, 255, 255, 0.9)',
+  color: '#333',
   display: '-webkit-box',
-  WebkitLineClamp: 3,
+  WebkitLineClamp: 4,
   WebkitBoxOrient: 'vertical',
   overflow: 'hidden',
+});
+
+export const FilmTitle = styled('span')({
+  fontWeight: 700,
+  color: '#1a1a2e',
 });
 
 export const DetailRow = styled(Box)({
   display: 'flex',
   alignItems: 'center',
-  gap: '8px',
-  fontSize: '0.85rem',
-  color: 'rgba(255, 255, 255, 0.85)',
+  gap: '4px',
+  fontSize: '0.8rem',
+  color: '#333',
+  fontStyle: 'italic',
 });
 
 export const DetailLabel = styled('span')({
+  fontStyle: 'italic',
+  color: '#666',
+});
+
+export const DetailValue = styled('span')({
   fontWeight: 600,
-  color: 'rgba(255, 255, 255, 0.6)',
+  fontStyle: 'italic',
+  color: '#333',
 });
 
 export const RtScore = styled(Box)({
   display: 'flex',
   alignItems: 'center',
-  gap: '6px',
-  fontSize: '0.9rem',
-  fontWeight: 600,
-  color: '#ffeb3b',
+  gap: '8px',
+  fontSize: '2rem',
+  fontWeight: 700,
+  color: '#1a1a2e',
+  marginTop: 'auto',
+});
+
+export const TomatoIcon = styled('img')({
+  width: '40px',
+  height: '40px',
+  objectFit: 'contain',
 });
 
 // Loading skeleton
@@ -173,4 +200,5 @@ export const SkeletonContainer = styled(Box)({
   flexDirection: 'column',
   gap: '8px',
   padding: '16px',
+  backgroundColor: '#fff',
 });

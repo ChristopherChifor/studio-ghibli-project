@@ -7,8 +7,10 @@ const Home = () => {
     <Box
       sx={{
         minHeight: '100vh',
-        background:
-          'linear-gradient(180deg, #87CEEB 0%, #B0E0E6 50%, #E0F4F4 100%)',
+        backgroundImage: 'url(/background@3x.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         padding: { xs: 2, md: 4 },
         display: 'flex',
         flexDirection: 'column',
@@ -59,16 +61,7 @@ const Home = () => {
         }}
       >
         {FILM_CONFIGS.map((filmConfig) => (
-          <Box
-            key={filmConfig.id}
-            sx={{
-              flex: { md: '1 1 0' },
-              maxWidth: { xs: '100%', md: '280px' },
-              width: '100%',
-            }}
-          >
-            <MovieCard filmConfig={filmConfig} />
-          </Box>
+          <MovieCard key={filmConfig.id} filmConfig={filmConfig} />
         ))}
       </Box>
     </Box>
