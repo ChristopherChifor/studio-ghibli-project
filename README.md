@@ -2,6 +2,12 @@
 
 > A responsive React + GraphQL application showcasing Studio Ghibli films with interactive 3D flip cards. This monorepo contains both frontend and backend packages managed through [lerna](https://github.com/lerna/lerna) and pnpm workspaces.
 
+## Demo
+
+<!-- To add video: Edit this file on GitHub, drag & drop your video here, and replace this comment -->
+
+---
+
 ## Getting Started
 
 ### Prerequisites
