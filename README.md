@@ -22,14 +22,7 @@ This project uses pnpm for package management. Install it by following the [pnpm
 
 ### Setup Instructions
 
-1. **Clone the repository**:
-
-   ```bash
-   git clone <your-fork-url>
-   cd studio-ghibli-project
-   ```
-
-2. **Install dependencies**:
+1. **Install dependencies**:
 
    ```bash
    pnpm install
@@ -37,14 +30,14 @@ This project uses pnpm for package management. Install it by following the [pnpm
 
    We use [pnpm workspaces](https://pnpm.io/workspaces) for dependency sharing between packages.
 
-3. **Copy .env.example values into .env file**:
+2. **Copy .env.example values into .env file**:
 
    ```bash
    cp ./packages/backend/.env.example ./packages/backend/.env
    cp ./packages/frontend/.env.example ./packages/frontend/.env
    ```
 
-4. **Start the development servers**:
+3. **Start the development servers**:
 
 - **Backend (GraphQL Server)**:
 
@@ -231,5 +224,3 @@ With additional time, I would implement:
 8. **Dark Mode**: Alternative color scheme respecting system preferences
 
 ---
-
-**Happy hacking! 🎬✨**
