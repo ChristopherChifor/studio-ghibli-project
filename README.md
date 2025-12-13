@@ -4,7 +4,8 @@
 
 ## Demo
 
-<!-- To add video: Edit this file on GitHub, drag & drop your video here, and replace this comment -->
+<img width="1484" height="897" alt="image" src="https://github.com/user-attachments/assets/cb768865-b293-4810-a845-62584851bb48" />
+
 
 ---
 
