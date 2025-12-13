@@ -1,14 +1,23 @@
 import { styled, Box, Typography, IconButton } from '@mui/material';
 
-// Card container with 3D perspective
-export const CardContainer = styled(Box)({
+// Card container with 3D perspective - responsive for 320px devices
+export const CardContainer = styled(Box)(({ theme }) => ({
   perspective: '1000px',
   width: '290px',
   height: '368px',
   cursor: 'pointer',
-});
+  // Responsive sizing for smaller screens (320px devices)
+  [theme.breakpoints.down('sm')]: {
+    width: '280px',
+    height: '360px',
+  },
+  '@media (max-width: 320px)': {
+    width: '260px',
+    height: '340px',
+  },
+}));
 
-// Inner card that flips
+// Inner card that flips - with reduced motion support
 export const CardInner = styled(Box, {
   shouldForwardProp: (prop) => prop !== 'isFlipped',
 })<{ isFlipped: boolean }>(({ isFlipped }) => ({
@@ -18,6 +27,10 @@ export const CardInner = styled(Box, {
   transformStyle: 'preserve-3d',
   transition: 'transform 0.7s ease-in-out',
   transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+  // Respect user's motion preferences
+  '@media (prefers-reduced-motion: reduce)': {
+    transition: 'transform 0.1s ease-in-out',
+  },
 }));
 
 // Base card face styles
@@ -99,6 +112,10 @@ export const ImageContainer = styled(Box, {
   position: 'relative',
   flexShrink: 0,
   willChange: 'height',
+  // Respect user's motion preferences
+  '@media (prefers-reduced-motion: reduce)': {
+    transition: 'height 0.1s ease-in-out',
+  },
 }));
 
 export const MovieImage = styled('img')({
@@ -122,6 +139,10 @@ export const LoadedTitle = styled(Typography, {
   fontWeight: 600,
   opacity: isVisible ? 1 : 0,
   transition: 'opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+  // Respect user's motion preferences
+  '@media (prefers-reduced-motion: reduce)': {
+    transition: 'opacity 0.05s ease-in-out',
+  },
 }));
 
 // Expanded state - Details section
@@ -139,6 +160,11 @@ export const DetailsContainer = styled(Box, {
   transition: 'opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
   transitionDelay: isExpanded ? '0.15s' : '0s',
   willChange: 'opacity',
+  // Respect user's motion preferences
+  '@media (prefers-reduced-motion: reduce)': {
+    transition: 'opacity 0.05s ease-in-out',
+    transitionDelay: '0s',
+  },
 }));
 
 export const Description = styled(Typography)({

@@ -4,20 +4,33 @@
 
 ## Relevant Files
 
+### Backend
+
 - `packages/backend/src/schemaModules/ghibli/objectTypes.ghibliSchema.ts` - Defines the Film GraphQL object type with all fields
-- `packages/backend/schema.graphql` - Auto-generated GraphQL schema (includes Film type)
-- `packages/backend/src/shared/types/gen/nexus-typegen/index.d.ts` - Auto-generated TypeScript types for the schema
-- `packages/backend/src/shared/utils.ts` - Contains transformGhibliFilm function to convert snake_case API response to camelCase
+- `packages/backend/src/schemaModules/ghibli/queries.ghibliSchema.ts` - Contains the film query resolver
 - `packages/backend/src/services/GhibliApi/GhibliApi.service.ts` - Service for fetching film data from the Studio Ghibli API
 - `packages/backend/src/services/GhibliApi/GhibliApi.service.unit.test.ts` - Unit tests for the GhibliApi service
 - `packages/backend/src/services/GhibliApi/index.ts` - Barrel export for GhibliApi service
-- `packages/backend/src/schemaModules/ghibli/queries.ghibliSchema.ts` - Contains the film query resolver
+- `packages/backend/src/shared/utils.ts` - Contains transformGhibliFilm function to convert snake_case API response to camelCase
+- `packages/backend/src/shared/constants.ts` - Error messages and GraphQL error codes
+- `packages/backend/schema.graphql` - Auto-generated GraphQL schema (includes Film type)
+- `packages/backend/src/shared/types/gen/nexus-typegen/index.d.ts` - Auto-generated TypeScript types for the schema
+
+### Frontend
+
+- `packages/frontend/src/modules/home/Home.tsx` - Main home page component with card grid layout
 - `packages/frontend/src/modules/home/components/MovieCard/MovieCard.tsx` - Main MovieCard component with three states
-- `packages/frontend/src/modules/home/components/MovieCard/MovieCard.styles.ts` - Styled components for MovieCard
-- `packages/frontend/src/modules/home/components/MovieCard/MovieCard.types.ts` - TypeScript interfaces and enums
+- `packages/frontend/src/modules/home/components/MovieCard/MovieCard.styles.ts` - Styled components for MovieCard with responsive design
+- `packages/frontend/src/modules/home/components/MovieCard/MovieCard.types.ts` - TypeScript interfaces and enums (CardState, FilmConfig)
+- `packages/frontend/src/modules/home/components/MovieCard/index.ts` - Barrel export for MovieCard
 - `packages/frontend/src/modules/home/constants.ts` - Film configurations with IDs and colors
+- `packages/frontend/src/hooks/useFilmQuery.ts` - Custom hook for lazy film queries
+- `packages/frontend/src/hooks/index.ts` - Barrel export for hooks
+- `packages/frontend/src/graphql/queries/index.ts` - GraphQL query definitions (GET_FILM)
+- `packages/frontend/src/graphql/gen/` - Auto-generated GraphQL types and utilities
 - `packages/frontend/src/contexts/ToastContext.tsx` - Toast notification context and provider
 - `packages/frontend/src/contexts/index.ts` - Barrel export for contexts
+- `packages/frontend/src/shared/components/ErrorPage.tsx` - Styled error boundary page
 
 ### Notes
 
