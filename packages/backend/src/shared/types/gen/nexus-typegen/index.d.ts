@@ -44,6 +44,20 @@ export interface NexusGenScalars {
 }
 
 export interface NexusGenObjects {
+  Film: { // root type
+    description?: string | null; // String
+    director?: string | null; // String
+    id: string; // String!
+    image?: string | null; // String
+    movieBanner?: string | null; // String
+    originalTitle?: string | null; // String
+    originalTitleRomanised?: string | null; // String
+    producer?: string | null; // String
+    releaseDate?: string | null; // String
+    rtScore?: string | null; // String
+    runningTime?: string | null; // String
+    title: string; // String!
+  }
   HelloWorld: { // root type
     message?: string | null; // String
   }
@@ -62,6 +76,20 @@ export type NexusGenRootTypes = NexusGenObjects
 export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
 
 export interface NexusGenFieldTypes {
+  Film: { // field return type
+    description: string | null; // String
+    director: string | null; // String
+    id: string; // String!
+    image: string | null; // String
+    movieBanner: string | null; // String
+    originalTitle: string | null; // String
+    originalTitleRomanised: string | null; // String
+    producer: string | null; // String
+    releaseDate: string | null; // String
+    rtScore: string | null; // String
+    runningTime: string | null; // String
+    title: string; // String!
+  }
   HelloWorld: { // field return type
     message: string | null; // String
   }
@@ -69,12 +97,27 @@ export interface NexusGenFieldTypes {
     placeholder: string | null; // String
   }
   Query: { // field return type
+    film: NexusGenRootTypes['Film'] | null; // Film
     helloWorld: NexusGenRootTypes['HelloWorld']; // HelloWorld!
     placeholder: string | null; // String
   }
 }
 
 export interface NexusGenFieldTypeNames {
+  Film: { // field return type name
+    description: 'String'
+    director: 'String'
+    id: 'String'
+    image: 'String'
+    movieBanner: 'String'
+    originalTitle: 'String'
+    originalTitleRomanised: 'String'
+    producer: 'String'
+    releaseDate: 'String'
+    rtScore: 'String'
+    runningTime: 'String'
+    title: 'String'
+  }
   HelloWorld: { // field return type name
     message: 'String'
   }
@@ -82,12 +125,18 @@ export interface NexusGenFieldTypeNames {
     placeholder: 'String'
   }
   Query: { // field return type name
+    film: 'Film'
     helloWorld: 'HelloWorld'
     placeholder: 'String'
   }
 }
 
 export interface NexusGenArgTypes {
+  Query: {
+    film: { // args
+      id: string; // ID!
+    }
+  }
 }
 
 export interface NexusGenAbstractTypeMembers {
